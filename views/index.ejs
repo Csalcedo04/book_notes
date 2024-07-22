@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Book Review</title>
+</head>
+<body>
+    <% prueba.forEach(img => { %>
+        <h1><%= book_name %> </h1>
+        <img src="data:image/jpeg;base64, <%= img %>" alt="Portada de libro">
+        <h2> Review made by <%= user_name %></h2>
+        <p><%= user_review %></p>
+    <% }); %>
+    <form action="/user/books" method="post">
+        <label for="userId">ID:</label>
+        <input type="text" id="userId" name="id" required>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
